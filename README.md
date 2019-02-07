@@ -14,7 +14,7 @@ How To Use This
 3. Run 'pip3 install Pandas' to install Pandas library, if Pandas is not installed
 4. Download testsmatch.py file into your running dirtory. testermatch.py is under
        https://github.com/emilyhuang11/testers-match
-5. put all your data csv files (testers.csv, devices.csv, bugs.csv, tester_device.csv) in any directory you specified
+5. YOu need to have all your data csv files (testers.csv, devices.csv, bugs.csv, tester_device.csv) saved in any directory
 6. Run 'python3 testersmatch.py' in your running directory
 
 
@@ -62,7 +62,19 @@ Device list (iPhone 4,iPhone 4S,iPhone 5,Galaxy S3,Galaxy S4,Nexus 4,Droid Razor
 1    Taybin Rutkin        59
 0  Miguel Bautista        26
 ```
+4. Search wiht 'JP' and 'Nexus 4', the csv file is under a specifiied direcory
 
+```
+USR-Emily-Huang:GitRep emily$ Python3 testersmatch.py
+Please input data folder:/Users/emily/Desktop/tempData
+Country List (US,GB,JP,ALL. separate by ','):JP
+Device list (iPhone 4,iPhone 4S,iPhone 5,Galaxy S3,Galaxy S4,Nexus 4,Droid Razor,Droid DNA,HTC One,iPhone 3,ALL. separeate by ','):Nexus 4
+              name  bugCount
+0      Lucas Lowry        25
+2  Sean Wellington        23
+1   Mingquan Zheng        13
+
+```
 
 
 
