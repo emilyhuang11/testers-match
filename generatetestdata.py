@@ -1,8 +1,5 @@
 
 
-
-
-
 import pandas as pd
 
 class Simulation:
@@ -15,13 +12,20 @@ class Simulation:
         devices =  pd.read_csv(dataFolder+'devices.csv')
         devices.dropna(inplace=True)
         bugs = pd.read_csv(dataFolder+'bugs.csv')
-
-        for i in range(100, 101):
-            data = {'testerId':i,'firstName':'f'+str(i),   'lastName':'l'+str(i),   'country': str(i%20), 'lastLogin':i}    
+        
+        clist = ['US', 'GP', 'CN']
+        for i in range(100, 100000):
+            testId = random.randint(1,10000)
+            index = random.randint(0,2)
+            co = clist[index]
+            data = {'testerId':testId,'firstName':'f'+str(testId),   'lastName':'l'+str(testId),   'country': co, 'lastLogin':i}    
             testers = testers.append(data, ignore_index=True)
             for j in range(1, 10):
-                data = {'bugId':i,'testId':i, 'deviceId':j}  
+                testerId2 = random.randint(1,10000)
+                deviceId = random.randint(1,10)
+                data = {'bugId':i,'testerId':testerId2, 'deviceId':deviceId}  
                 bugs = bugs.append(data, ignore_index=True)
+
         testers.to_csv('generated_testers.csv', encoding='utf-8', index=False)
         bugs.to_csv('generated_bugs.csv', encoding='utf-8', index=False)
         
