@@ -2,7 +2,7 @@
 import pandas as pd
 
 class TestersMatchDB:
-    def loadData(self, granuity):
+    def loadData(self, blockSize):
         self.dataFolder = input('Please input data folder:')
         testers = pd.read_csv(self.dataFolder+'/testers.csv')
         testers.dropna(inplace=True)
@@ -18,8 +18,8 @@ class TestersMatchDB:
         # creaet a intermediate data frame that contains country, firstname, last name, description, and bugcount(nubmer of the bugs found)
         self.refinedData = pd.DataFrame(columns=['country', 'firstName', 'lastName', 'description', 'bugCount'])
 
-        for i in range(0, testers.shape[0]//granuity + 1):
-            tempTesters = testers.iloc[(i*granuity):((i+1)*granuity)]
+        for i in range(0, testers.shape[0]//blockSize + 1):
+            tempTesters = testers.iloc[(i*blockSize):((i+1)*blockSize)]
             tempData = tempTesters.merge(tester_device, on='testerId')
             tempData = tempData.merge(devices, on='deviceId')
             tempData = tempData.merge(bugs, on=['deviceId', 'testerId'], how = 'left')
@@ -65,7 +65,7 @@ class TestersMatchDB:
 
 if __name__ == '__main__':
     app = TestersMatchDB()
-    app.loadData(granuity=1000)
+    app.loadData(blockSize=1000)
     app.userInput()
     app.queryData()
     app.printResult()
