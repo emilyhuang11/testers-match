@@ -12,7 +12,7 @@ How To Use This
 2. If Python3 is not installed, download it from https://www.python.org/downloads/
 3. Check if you have Pandas installed. (Run 'pip3 list' to see if Pandas is listed)
 3. Run 'pip3 install Pandas' to install Pandas library, if Pandas is not installed
-4. Download testsmatch.py file into your running dirtory. testermatch.py is under  https://github.com/emilyhuang11/testers-match
+4. Download testersmatch.py file into your running dirtory. testersmatch.py is under  https://github.com/emilyhuang11/testers-match
 5. (Optional) Download sample csv files with 'git clone https://github.com/emilyhuang11/testers-match.git'. This will download sample csv files as well as testermatch.py
 5. You need to have all your data csv files (testers.csv, devices.csv, bugs.csv, tester_device.csv) saved in any directory
 6. Run 'python3 testersmatch.py' in your running directory
