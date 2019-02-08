@@ -3,7 +3,7 @@
 What Is This?
 -------------
 
-This is a simple Python/Pandas application intended to process a list of csv files and locate the best tester candidates. Sample csv files (testers.csv, devices.csv and bugs.csv) are also provided. The output testers are ranked by the number of the bugs found based on inputting county and device combination. 
+This is a simple Python/Pandas application intended to process a list of csv files and locate the best tester candidates. Sample csv files (testers.csv, devices.csv, bugs.csv, tester_device.csv) are also provided. The output testers are ranked by the number of the bugs found based on inputting county and device combination. 
 
 How To Use This
 ---------------
